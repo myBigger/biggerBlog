@@ -1,0 +1,23 @@
+export const SITE = {
+  website: "https://forethoughtfully-enchondromatous-anastacia.ngrok-free.dev/",
+  author: "必哥",
+  profile: "",
+  desc: "记录真实踩坑和实践经验的技术博客",
+  title: "必哥的技术笔记",
+  ogImage: "astropaper-og.jpg",
+  lightAndDarkMode: true,
+  postPerIndex: 4,
+  postPerPage: 4,
+  scheduledPostMargin: 15 * 60 * 1000,
+  showArchives: true,
+  showBackButton: true,
+  editPost: {
+    enabled: false,
+    text: "",
+    url: "",
+  },
+  dynamicOgImage: true,
+  dir: "ltr",
+  lang: "zh-CN",
+  timezone: "Asia/Shanghai",
+} as const;
