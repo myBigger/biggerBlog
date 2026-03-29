@@ -1,5 +1,5 @@
 export const SITE = {
-  website: "https://forethoughtfully-enchondromatous-anastacia.ngrok-free.dev/",
+  website: "https://biggerblog.vercel.app/",
   author: "必哥",
   profile: "",
   desc: "记录真实踩坑和实践经验的技术博客",
