@@ -184,5 +184,31 @@ request.setSslConfiguration(sslConfig);
 
 ---
 
+## 下期预告
+
+下期「必哥手记」，我会详细讲 QtAuthNet 的设计草案：
+
+- 现有的 Qt HTTP 请求方案到底哪里设计有问题
+- QtAuthNet 的 API 接口设计思路
+- 三个最深坑的第一手记录
+
+**「必哥手记」| 第 2 期：QtAuthNet 设计草案——一个库该长什么样**
+
+下周一发布。
+
+---
+
+## 相关资源
+
+- QtAuthNet GitHub：https://github.com/myBigger/QtAuthNet
+- Qt 官方文档 QSslSocket：https://doc.qt.io/qt-6/qsslsocket.html
+- Qt 官方关于 SSL 后端切换的说明：https://www.qt.io/blog/changing-ssl-libraries-in-qt-6
+
+---
+
+「必哥手记」—— 记录真实踩坑，讲述技术真相。
+
+---
+
  🙏 感谢阅读！
 🌍 Thanks! · Merci · Gracias · Danke · Arigato · Shukran
