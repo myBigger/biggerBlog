@@ -30,14 +30,15 @@ GitHub：[github.com/myBigger/QtAuthNet](https://github.com/myBigger/QtAuthNet)
 
 ### 必哥手记系列（深度长文）
 
-| 编号 | 标题 | 核心内容 |
-|------|------|---------|
-| ② | [QtAuthNet 设计手记：架构思路与踩坑全记录](/blog/qtauthnet-design) | 整体架构、正交认证设计、CAS 协议实现、std::function 回调存储、跨平台共享库坑、双平台 CI/CD 血泪史 | 2026-04-15 |
+| 编号 | 标题 | 核心内容 | 日期 |
+|------|------|---------|------|
+| ① | [Qt 网络编程的真相](/blog/qt-network-truth) | QSslSocket Qt5/Qt6 切换陷阱、平台根证书库差异、5个SSL配置坑 | 2026-04-10 |
+| ② | [QtAuthNet 设计手记](/blog/qtauthnet-design) | 整体架构、正交认证设计、CAS 协议实现、std::function 回调存储、跨平台共享库坑、双平台 CI/CD 血泪史 | 2026-04-15 |
 
 ### QtAuthNet 体系化系列
 
-| 编号 | 标题 | 核心内容 |
-|------|------|---------|
+| 编号 | 标题 | 核心内容 | 日期 |
+|------|------|---------|------|
 | ① | [起源：为什么要做一个自己的Qt网络认证框架](/blog/qtauthnet-01-origin) | 项目背景、三个痛点、技术选型初衷 | 2026-03-28 |
 | ② | [四层架构：AuthInterceptor如何统一处理401](/blog/qtauthnet-02-architecture) | 架构图、AuthInterceptor流程、排队重发、完整数据流 | 2026-03-28 |
 | ③ | [CAS单点登录：协议、时序图与JSON配置公钥方案](/blog/qtauthnet-03-cas) | CAS协议12步时序图、JSON配置公钥方案对比、CasClient设计 | 2026-03-28 |
