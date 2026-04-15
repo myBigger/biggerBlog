@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "defaultMode": "bypassPermissions"
+  },
+  "rules": [
+    ".claude/rules/blog-writing.md",
+    ".claude/rules/astro-rules.md"
+  ]
+}
