@@ -60,13 +60,25 @@ export default defineConfig({
   experimental: {
     preserveScriptOrder: true,
     fonts: [
+      // GitHub 风格中文字体（Noto Sans，含简繁体中文）
       {
-        name: "Inter",
-        cssVariable: "--font-google-sans-code",
+        name: "Noto Sans",
+        cssVariable: "--font-sans",
         provider: fontProviders.google(),
-        fallbacks: ["monospace"],
+        fallbacks: ["-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "Helvetica", "Arial", "sans-serif"],
         weights: [300, 400, 500, 600, 700, 800, 900],
         styles: ["normal", "italic"],
+        subsets: ["latin", "latin-ext", "chinese-simplified", "chinese-traditional"],
+      },
+      // GitHub 风格等宽字体（Geist Mono）
+      {
+        name: "Geist Mono",
+        cssVariable: "--font-mono",
+        provider: fontProviders.google(),
+        fallbacks: ["ui-monospace", "'SFMono-Regular'", "'SF Mono'", "Menlo", "Consolas", "'Liberation Mono'", "monospace"],
+        weights: [300, 400, 500, 600, 700, 800, 900],
+        styles: ["normal", "italic"],
+        subsets: ["latin", "latin-ext"],
       },
     ],
   },

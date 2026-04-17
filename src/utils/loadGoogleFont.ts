@@ -1,3 +1,7 @@
+// Font loader for OG image embedding via @resvg/resvg-js
+// Fonts are embedded into dynamically generated Open Graph images.
+// Now using Noto Sans to match the GitHub-style font stack.
+
 async function loadGoogleFont(
   font: string,
   text: string,
@@ -36,14 +40,14 @@ async function loadGoogleFonts(
 > {
   const fontsConfig = [
     {
-      name: "IBM Plex Mono",
-      font: "IBM+Plex+Mono",
+      name: "Noto Sans",
+      font: "Noto+Sans",
       weight: 400,
       style: "normal",
     },
     {
-      name: "IBM Plex Mono",
-      font: "IBM+Plex+Mono",
+      name: "Noto Sans",
+      font: "Noto+Sans",
       weight: 700,
       style: "bold",
     },

@@ -2,3 +2,7 @@ node_modules/
 dist/
 .DS_Store
 *.log
+
+# Astro font build artifacts (auto-generated, don't track)
+.astro/fonts/
+.astro/fonts.d.ts
