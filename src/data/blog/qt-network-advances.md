@@ -4,7 +4,7 @@ pubDatetime: 2026-04-17T00:00:00.000Z
 title: 「必哥手记」| 第 3 期 · 为什么你的 HTTP 请求总是比预期慢
 slug: qt-network-advances
 featured: false
-draft: true
+draft: false
 tags:
   - Qt
   - 网络编程
