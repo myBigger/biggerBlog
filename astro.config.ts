@@ -61,7 +61,7 @@ export default defineConfig({
     preserveScriptOrder: true,
     fonts: [
       {
-        name: "Geist",
+        name: "Inter",
         cssVariable: "--font-google-sans-code",
         provider: fontProviders.google(),
         fallbacks: ["monospace"],
