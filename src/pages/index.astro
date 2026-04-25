@@ -10,59 +10,57 @@ const recentPosts = sortedPosts.slice(0, 6);
 ---
 
 <Layout>
-  <div class="min-h-screen bg-white dark:bg-gray-900">
-  <div class="min-h-screen bg-white dark:bg-gray-900">
+  <div class="min-h-screen bg-[#fafafa] dark:bg-[#111]">
     <!-- 顶部导航 -->
-    <header class="fixed top-0 left-0 right-0 h-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 z-50">
-      <div class="max-w-5xl mx-auto px-4 h-full flex items-center justify-between">
-        <a href="/" class="text-lg font-semibold text-gray-900 dark:text-white">
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-[#1a1a1a]/80 border-b border-gray-200 dark:border-gray-800">
+      <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="/" class="text-xl font-bold text-gray-900 dark:text-white tracking-tight">
           {SITE.title}
         </a>
         <nav class="flex items-center gap-6">
-          <a href="/posts" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">文章</a>
-          <a href="/tags" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">标签</a>
-          <a href="/about" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">关于</a>
+          <a href="/posts" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">文章</a>
+          <a href="/tags" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">标签</a>
+          <a href="/about" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">关于</a>
         </nav>
       </div>
     </header>
 
     <!-- 主内容 -->
-    <main class="pt-24 pb-12 max-w-5xl mx-auto px-4">
+    <main class="max-w-4xl mx-auto px-6 py-12">
       <!-- Hero区域 -->
-      <section class="py-12">
-        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-          必哥的技术笔记
+      <section class="mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight">
+          {SITE.title}
         </h1>
-        <p class="text-lg text-gray-600 dark:text-gray-400">
-          记录真实踩坑和实践经验
+        <p class="text-lg text-gray-500 dark:text-gray-400">
+          {SITE.desc}
         </p>
       </section>
 
       <!-- 文章网格 -->
       <section>
-        <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-          最新文章
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {recentPosts.map(post => (
+        <h2 class="text-lg font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-6">最新文章</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {recentPosts.map((post, index) => (
             <a 
               href={`/posts/${post.id}`}
-              class="block p-6 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-colors"
+              class="group block p-6 bg-white dark:bg-[#1a1a1a] rounded-xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-lg hover:shadow-gray-200/50 dark:hover:shadow-black/20 transition-all duration-300"
+              style={`animation: fadeInUp 0.5s ease-out ${index * 0.1}s both;`}
             >
-              <div class="flex items-center gap-2 mb-3">
-                <span class="text-sm text-gray-500 dark:text-gray-400">
-                  {post.data.pubDatetime.toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' })}
-                </span>
+              <div class="flex items-center gap-3 mb-3">
+                <time class="text-sm text-gray-400 dark:text-gray-500 font-mono">
+                  {post.data.pubDatetime.toLocaleDateString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit' })}
+                </time>
                 {post.data.tags && post.data.tags.slice(0, 1).map(tag => (
-                  <span class="text-xs px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded">
+                  <span class="text-xs px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-full">
                     {tag}
                   </span>
                 ))}
               </div>
-              <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors mb-2 leading-snug">
                 {post.data.title}
               </h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+              <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 leading-relaxed">
                 {post.data.description}
               </p>
             </a>
@@ -71,21 +69,37 @@ const recentPosts = sortedPosts.slice(0, 6);
       </section>
 
       <!-- 查看更多 -->
-      <div class="mt-8 text-center">
+      <div class="mt-10 text-center">
         <a 
           href="/posts" 
-          class="inline-flex items-center gap-2 px-6 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+          class="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
         >
-          查看更多 →
+          查看全部文章
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
         </a>
       </div>
     </main>
 
     <!-- 页脚 -->
-    <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
-      <div class="max-w-5xl mx-auto px-4 text-center text-sm text-gray-500 dark:text-gray-400">
-        © 2026 {SITE.author} · 基于 Astro 构建
+    <footer class="py-8 border-t border-gray-200 dark:border-gray-800 mt-12">
+      <div class="max-w-4xl mx-auto px-6 text-center text-sm text-gray-400 dark:text-gray-500">
+        © 2026 {SITE.author}
       </div>
     </footer>
   </div>
 </Layout>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
