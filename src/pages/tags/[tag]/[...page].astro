@@ -40,7 +40,9 @@ const { page, tagName } = Astro.props;
   >
     <h1 slot="title" transition:name={tag}>{`标签:${tag}`}</h1>
     <ul>
-      {page.data.map(data => <Card {...data} />)}
+      {page.data.map((data, index) => (
+        <Card colorIndex={index} {...data} />
+      ))}
     </ul>
   </Main>
 

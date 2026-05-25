@@ -43,5 +43,11 @@
     "prettier-plugin-tailwindcss": "^0.7.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.51.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "strnum": "file:/tmp/strnum-patch/strnum-2.1.1.tgz",
+      "stream-replace-string": "file:/tmp/pnpm-patches/stream-replace-string-2.0.0/stream-replace-string-2.0.0.tgz"
+    }
   }
 }

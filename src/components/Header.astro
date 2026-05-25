@@ -36,15 +36,15 @@ const isActive = (path: string) => {
   <div
     id="top-nav-wrap"
     class:list={[
-      "py-4 sm:py-6",
-      "border-b border-border",
-      "relative w-full bg-background",
+      "ac-pill-nav py-4 sm:py-6",
+      "border-b-2 border-dashed border-border",
+      "relative w-full",
       "flex items-baseline justify-between sm:items-center",
     ]}
   >
     <a
       href="/"
-      class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"
+      class="absolute py-1 text-xl leading-8 font-bold whitespace-nowrap text-foreground sm:static sm:my-auto sm:text-2xl sm:leading-none"
     >
       {SITE.title}
     </a>

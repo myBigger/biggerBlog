@@ -1,0 +1,192 @@
+/* Animal Island inspired tokens — CSS-only, no React dependency */
+
+/* NookPhone card palette */
+:root,
+html[data-theme="light"] {
+  --ac-primary: #19c8b9;
+  --ac-primary-hover: #3dd4c6;
+  --ac-focus: #ffcc00;
+  --ac-shadow-3d: #bdaea0;
+  --ac-shadow-input: #d4c9b4;
+
+  --ac-card-default-bg: rgb(247, 243, 223);
+  --ac-card-default-fg: #725d42;
+  --ac-card-blue-bg: #889df0;
+  --ac-card-blue-fg: #fff;
+  --ac-card-teal-bg: #82d5bb;
+  --ac-card-teal-fg: #fff;
+  --ac-card-yellow-bg: #f7cd67;
+  --ac-card-yellow-fg: #725d42;
+  --ac-card-green-bg: #8ac68a;
+  --ac-card-green-fg: #fff;
+  --ac-card-orange-bg: #e59266;
+  --ac-card-orange-fg: #fff;
+  --ac-card-pink-bg: #f8a6b2;
+  --ac-card-pink-fg: #fff;
+}
+
+html[data-theme="dark"] {
+  --ac-primary: #3dd4c6;
+  --ac-primary-hover: #5ee0d4;
+  --ac-focus: #ffcc00;
+  --ac-shadow-3d: #1a2832;
+  --ac-shadow-input: #243444;
+
+  --ac-card-default-bg: #3d4f5c;
+  --ac-card-default-fg: #e8dcc8;
+  --ac-card-blue-bg: #5a6eb8;
+  --ac-card-blue-fg: #f0f4ff;
+  --ac-card-teal-bg: #4a9a82;
+  --ac-card-teal-fg: #f0fff8;
+  --ac-card-yellow-bg: #c9a84a;
+  --ac-card-yellow-fg: #fff8e6;
+  --ac-card-green-bg: #5a8a5a;
+  --ac-card-green-fg: #f0fff0;
+  --ac-card-orange-bg: #b87850;
+  --ac-card-orange-fg: #fff5f0;
+  --ac-card-pink-bg: #c87888;
+  --ac-card-pink-fg: #fff0f2;
+}
+
+/* Utilities */
+.ac-shadow-3d {
+  box-shadow: 0 4px 0 var(--ac-shadow-3d);
+}
+
+.ac-shadow-3d:active {
+  box-shadow: 0 1px 0 var(--ac-shadow-3d);
+  transform: translateY(3px);
+}
+
+.ac-card {
+  border-radius: 20px;
+  padding: 1rem 1.25rem;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.ac-card:hover {
+  transform: translateY(-2px);
+}
+
+.ac-card--default {
+  background: var(--ac-card-default-bg);
+  color: var(--ac-card-default-fg);
+}
+
+.ac-card--app-blue {
+  background: var(--ac-card-blue-bg);
+  color: var(--ac-card-blue-fg);
+}
+
+.ac-card--app-teal {
+  background: var(--ac-card-teal-bg);
+  color: var(--ac-card-teal-fg);
+}
+
+.ac-card--app-yellow {
+  background: var(--ac-card-yellow-bg);
+  color: var(--ac-card-yellow-fg);
+}
+
+.ac-card--app-green {
+  background: var(--ac-card-green-bg);
+  color: var(--ac-card-green-fg);
+}
+
+.ac-card--app-orange {
+  background: var(--ac-card-orange-bg);
+  color: var(--ac-card-orange-fg);
+}
+
+.ac-card--app-pink {
+  background: var(--ac-card-pink-bg);
+  color: var(--ac-card-pink-fg);
+}
+
+.ac-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  background: var(--ac-primary);
+  color: #fff;
+  box-shadow: 0 4px 0 var(--ac-shadow-3d);
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+}
+
+.ac-btn:hover {
+  background: var(--ac-primary-hover);
+  color: #fff;
+}
+
+.ac-btn:active {
+  box-shadow: 0 1px 0 var(--ac-shadow-3d);
+  transform: translateY(3px);
+}
+
+.ac-pill-nav a,
+.ac-pill-nav button {
+  border-radius: 50px;
+  padding: 0.35rem 0.9rem;
+  font-weight: 600;
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.ac-pill-nav a:hover,
+.ac-pill-nav a.active-nav {
+  background: var(--ac-focus);
+  color: #725d42;
+  text-decoration: none;
+  box-shadow: 0 3px 0 var(--ac-shadow-3d);
+}
+
+html[data-theme="dark"] .ac-pill-nav a:hover,
+html[data-theme="dark"] .ac-pill-nav a.active-nav {
+  color: #2a3d4f;
+}
+
+.ac-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  background: var(--ac-card-teal-bg);
+  color: var(--ac-card-teal-fg);
+  border: none;
+  box-shadow: 0 2px 0 var(--ac-shadow-3d);
+  transition: transform 0.1s ease;
+}
+
+.ac-tag-pill:hover {
+  transform: translateY(-1px);
+  color: var(--ac-card-teal-fg);
+}
+
+.ac-content-box {
+  background: var(--ac-card-default-bg);
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 0 var(--ac-shadow-3d);
+}
+
+.ac-divider-dashed {
+  border: none;
+  border-top: 3px dashed var(--border);
+  opacity: 0.7;
+}
+
+.ac-progress-bar {
+  background: var(--ac-primary) !important;
+}

@@ -22,7 +22,9 @@ const { page } = Astro.props;
   <Header />
   <Main pageTitle="文章" pageDesc="所有文章列表">
     <ul>
-      {page.data.map(data => <Card {...data} />)}
+      {page.data.map((data, index) => (
+        <Card colorIndex={index} {...data} />
+      ))}
     </ul>
   </Main>
 

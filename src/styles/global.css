@@ -1,30 +1,38 @@
 @import "tailwindcss";
 @import "./typography.css";
+@import "./animal-island.css";
 
-/* ===== GitHub-style Font System ===== */
-/* Noto Sans（正文）+ Geist Mono（代码），通过 Astro Font 注入 CSS 变量 */
+/* Animal Island font stack (loaded via Layout.astro link tags) */
 :root {
-  --font-stack-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-stack-mono: var(--font-mono), ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --font-stack-sans:
+    "Nunito", "Noto Sans SC", "Zen Maru Gothic", -apple-system, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-stack-mono:
+    ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+/* Light — day island */
 :root,
 html[data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
-  --muted: #e6e6e6;
-  --border: #ece9e9;
+  --background: #f8f8f0;
+  --foreground: #794f27;
+  --accent: #19c8b9;
+  --muted: #f0e8d8;
+  --border: #c4b89e;
+  --body-text: #725d42;
 }
 
+/* Dark — night island */
 html[data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --muted: #343f60;
-  --border: #ab4b08;
+  --background: #2a3d4f;
+  --foreground: #e8dcc8;
+  --accent: #3dd4c6;
+  --muted: #354656;
+  --border: #4a5f72;
+  --body-text: #d4c8b4;
 }
 
 @theme inline {
@@ -47,6 +55,7 @@ html[data-theme="dark"] {
   }
   body {
     @apply flex min-h-svh flex-col bg-background font-app text-foreground selection:bg-accent/75 selection:text-background;
+    color: var(--body-text);
   }
   a,
   button {
@@ -67,11 +76,9 @@ html[data-theme="dark"] {
 }
 
 .active-nav {
-  @apply underline decoration-wavy decoration-2 underline-offset-8;
+  @apply no-underline;
 }
 
-/* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
-/* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 1rem;
 }

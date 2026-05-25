@@ -1,5 +1,4 @@
 ---
-import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
 import { SITE } from "@/config";
@@ -61,14 +60,11 @@ const structuredData = {
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Load Fonts: Noto Sans (正文) + Geist Mono (代码) -->
-    <Font
-      cssVariable="--font-sans"
-      preload={[{ subset: "latin", weight: 400, style: "normal" }]}
-    />
-    <Font
-      cssVariable="--font-mono"
-      preload={[{ subset: "latin", weight: 400, style: "normal" }]}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+      rel="stylesheet"
     />
 
     <!-- General Meta Tags -->

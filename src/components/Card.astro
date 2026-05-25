@@ -4,30 +4,44 @@ import { slugifyStr } from "@/utils/slugify";
 import { getPath } from "@/utils/getPath";
 import Datetime from "./Datetime.astro";
 
+const CARD_COLORS = [
+  "app-blue",
+  "default",
+  "app-teal",
+  "app-yellow",
+  "app-green",
+  "app-orange",
+] as const;
+
 type Props = {
   variant?: "h2" | "h3";
+  colorIndex?: number;
 } & CollectionEntry<"blog">;
 
-const { variant: Heading = "h2", id, data, filePath } = Astro.props;
+const { variant: Heading = "h2", colorIndex = 0, id, data, filePath } =
+  Astro.props;
+
+const cardColor = CARD_COLORS[colorIndex % CARD_COLORS.length];
 
 const { title, description, ...props } = data;
 ---
 
-<li class="my-6">
+<li class="my-4">
   <a
     href={getPath(id, filePath)}
     class:list={[
-      "inline-block text-lg font-medium text-accent",
-      "decoration-dashed underline-offset-4 hover:underline",
-      "focus-visible:no-underline focus-visible:underline-offset-0",
+      "ac-card ac-shadow-3d block",
+      `ac-card--${cardColor}`,
+      "focus-visible:no-underline focus-visible:outline-2",
     ]}
   >
     <Heading
+      class="text-lg font-bold leading-snug"
       style={{ viewTransitionName: slugifyStr(title.replaceAll(".", "-")) }}
     >
       {title}
     </Heading>
+    <Datetime {...props} />
+    {description && <p class="mt-2 text-sm opacity-90">{description}</p>}
   </a>
-  <Datetime {...props} />
-  <p>{description}</p>
 </li>

@@ -22,7 +22,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 <Layout>
   <Header />
   <main id="main-content" data-layout="index" class="app-layout">
-    <section id="hero" class:list={["pt-8 pb-6", "border-b border-border"]}>
+    <section id="hero" class:list={["pt-8 pb-6", "border-b-2 border-dashed border-border"]}>
       <a
         target="_blank"
         href="/rss.xml"
@@ -63,8 +63,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         >
           <h2 class="text-2xl font-semibold tracking-wide">精选文章</h2>
           <ul>
-            {featuredPosts.map(data => (
-              <Card variant="h3" {...data} />
+            {featuredPosts.map((data, index) => (
+              <Card variant="h3" colorIndex={index} {...data} />
             ))}
           </ul>
         </section>
@@ -78,7 +78,9 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
           <ul>
             {recentPosts.map(
               (data, index) =>
-                index < SITE.postPerIndex && <Card variant="h3" {...data} />
+                index < SITE.postPerIndex && (
+                  <Card variant="h3" colorIndex={index + featuredPosts.length} {...data} />
+                )
             )}
           </ul>
         </section>
@@ -86,7 +88,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
     }
 
     <div class="my-8 text-center">
-      <LinkButton href="/posts/">
+      <LinkButton pill href="/posts/">
         全部文章
         <IconArrowRight class="inline-block rtl:-rotate-180" />
       </LinkButton>
