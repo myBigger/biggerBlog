@@ -6,3 +6,6 @@ dist/
 # Astro font build artifacts (auto-generated, don't track)
 .astro/fonts/
 .astro/fonts.d.ts
+
+# Local Wiki copy for migration (not published)
+content-import/
