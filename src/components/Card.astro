@@ -4,8 +4,7 @@ import { slugifyStr } from "@/utils/slugify";
 import { getPath } from "@/utils/getPath";
 import Datetime from "./Datetime.astro";
 
-const CARD_COLORS = [
-  "app-blue",
+const LIST_COLORS = [
   "default",
   "app-teal",
   "app-yellow",
@@ -16,12 +15,21 @@ const CARD_COLORS = [
 type Props = {
   variant?: "h2" | "h3";
   colorIndex?: number;
+  featured?: boolean;
 } & CollectionEntry<"blog">;
 
-const { variant: Heading = "h2", colorIndex = 0, id, data, filePath } =
-  Astro.props;
+const {
+  variant: Heading = "h2",
+  colorIndex = 0,
+  featured = false,
+  id,
+  data,
+  filePath,
+} = Astro.props;
 
-const cardColor = CARD_COLORS[colorIndex % CARD_COLORS.length];
+const cardColor = featured
+  ? "app-blue"
+  : LIST_COLORS[colorIndex % LIST_COLORS.length];
 
 const { title, description, ...props } = data;
 ---

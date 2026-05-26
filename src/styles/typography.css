@@ -28,7 +28,12 @@
     }
 
     a {
-      @apply wrap-break-word text-foreground decoration-dashed underline-offset-4 hover:text-accent focus-visible:no-underline;
+      @apply wrap-break-word text-foreground decoration-dashed underline-offset-4 focus-visible:no-underline;
+    }
+
+    a:hover {
+      color: var(--foreground);
+      text-decoration-color: var(--ac-focus);
     }
 
     ul {
@@ -52,13 +57,16 @@
     }
 
     table {
+      @apply overflow-hidden rounded-2xl border border-border;
+      box-shadow: 0 3px 0 var(--ac-shadow-3d);
+
       th,
       td {
         @apply border border-border p-2;
       }
 
       th {
-        @apply py-1.5;
+        @apply bg-accent/20 py-1.5 font-semibold;
       }
 
       code {
@@ -67,7 +75,7 @@
     }
 
     code {
-      @apply rounded bg-muted/75 p-1 wrap-break-word text-foreground before:content-none after:content-none;
+      @apply rounded-lg bg-(--ac-card-default-bg) px-1.5 py-0.5 wrap-break-word text-foreground before:content-none after:content-none;
     }
 
     .astro-code code {
@@ -75,25 +83,34 @@
     }
 
     blockquote {
-      @apply border-s-accent/80 wrap-break-word opacity-80;
+      @apply wrap-break-word rounded-2xl border-s-4 border-s-accent bg-(--ac-card-default-bg) px-4 py-3 opacity-95;
     }
 
     details {
-      @apply inline-block cursor-pointer text-foreground select-none [&_p]:hidden [&_ul]:my-0!;
+      @apply mb-4 inline-block w-full cursor-pointer rounded-2xl bg-(--ac-card-default-bg) px-4 py-2 text-foreground select-none [&_p]:hidden [&_ul]:my-0!;
+      box-shadow: 0 3px 0 var(--ac-shadow-3d);
     }
 
     summary {
-      @apply focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent focus-visible:outline-dashed;
+      @apply rounded-full px-3 py-1 font-semibold focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-(--ac-focus) focus-visible:outline-dashed;
+    }
+
+    nav ul,
+    & > ul:first-of-type {
+      @apply rounded-2xl bg-(--ac-card-default-bg) px-4 py-3;
+      box-shadow: 0 3px 0 var(--ac-shadow-3d);
     }
 
     pre {
-      @apply focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-dashed;
+      @apply overflow-hidden rounded-[18px] focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-(--ac-focus) focus-visible:outline-dashed;
+      box-shadow: 0 4px 0 var(--ac-shadow-3d);
     }
   }
 
   /* ===== Code Blocks & Syntax Highlighting ===== */
   .astro-code {
-    @apply flex border bg-(--shiki-light-bg) text-(--shiki-light) outline-border font-[family-name:var(--font-stack-mono)] [&_span]:text-(--shiki-light);
+    @apply flex rounded-[18px] border bg-(--shiki-light-bg) text-(--shiki-light) outline-border font-[family-name:var(--font-stack-mono)] [&_span]:text-(--shiki-light);
+    box-shadow: 0 4px 0 var(--ac-shadow-3d);
   }
 
   html[data-theme="dark"] .astro-code {

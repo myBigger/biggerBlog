@@ -1,0 +1,10 @@
+---
+type Props = {
+  title: string;
+  class?: string;
+};
+
+const { title, class: className } = Astro.props;
+---
+
+<h2 class:list={["ac-section-label", className]}>{title}</h2>

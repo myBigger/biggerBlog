@@ -4,8 +4,9 @@
 
 ## 设计决策
 
-- **克制**：纯色奶油背景，无强渐变装饰
-- **卡片**：NookPhone 多色交替（`Card.astro` 的 `colorIndex`）
+- **克制**：纯色奶油背景；暗色为暖青绿「星空夜晚」+ 微弱星点
+- **首页**：`.ac-hero-panel` 欢迎面板；`.ac-section-label` 黄色区块标题
+- **卡片**：精选固定 `app-blue`；列表按 `colorIndex` 轮换其余 Nook 色
 - **双主题**：浅色「白天岛屿」+ 暗色「夜晚岛屿」
 - **字体**：Google Fonts — Nunito、Noto Sans SC、Zen Maru Gothic
 
