@@ -1,10 +1,10 @@
 ---
 author: 必哥
-pubDatetime: 2026-05-26T00:00:00.000Z
+pubDatetime: 2026-05-27T02:00:00.000Z
 title: "「后端踩坑手记」| 第 1 期 · MyBatis-Plus 为什么写不进 NULL"
 slug: backend-pitfalls-01-mybatis-null
 featured: false
-draft: true
+draft: false
 tags:
   - 后端踩坑手记
   - MyBatis-Plus
@@ -134,5 +134,6 @@ DEBUG c.b.m.BizRecordMapper.updateById - ==> Parameters: 10086(Long)
 
 **系列导航**
 
-- 目录：[第 1 期（本篇）](/posts/backend-pitfalls-01-mybatis-null) · [第 2 期](/posts/backend-pitfalls-02-bpm-assignee)（草稿） · [第 3 期](/posts/backend-pitfalls-03-snapshot-bpm)（草稿）
+- 目录：[第 1 期（本篇）](/posts/backend-pitfalls-01-mybatis-null) · [第 2 期](/posts/backend-pitfalls-02-bpm-assignee) · [第 3 期](/posts/backend-pitfalls-03-snapshot-bpm)
+- 下一篇：[第 2 期 · 为什么 BPM 下一节点办理人总是空？](/posts/backend-pitfalls-02-bpm-assignee)
 - 另见：[必哥手记 · Qt 网络编程的真相](/posts/qt-network-truth)

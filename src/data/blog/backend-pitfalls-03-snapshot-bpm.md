@@ -1,10 +1,10 @@
 ---
 author: 必哥
-pubDatetime: 2026-06-09T00:00:00.000Z
+pubDatetime: 2026-05-27T00:00:00.000Z
 title: "「后端踩坑手记」| 第 3 期 · 审批单为什么要「主表+明细+JSON 快照」？"
 slug: backend-pitfalls-03-snapshot-bpm
 featured: false
-draft: true
+draft: false
 tags:
   - 后端踩坑手记
   - SpringBoot

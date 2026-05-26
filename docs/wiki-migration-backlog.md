@@ -6,9 +6,11 @@
 
 | 期 | 标题 | slug | 状态 | draft |
 |----|------|------|------|-------|
-| 1 | MyBatis-Plus 为什么写不进 NULL | `backend-pitfalls-01-mybatis-null` | [x] 已写 | true |
-| 2 | 为什么 BPM 下一节点办理人总是空？ | `backend-pitfalls-02-bpm-assignee` | [x] 已写 | true |
-| 3 | 审批单为什么要「主表+明细+JSON 快照」？ | `backend-pitfalls-03-snapshot-bpm` | [x] 已写 | true |
+| 1 | MyBatis-Plus 为什么写不进 NULL | `backend-pitfalls-01-mybatis-null` | [x] 已发布 | false |
+| 2 | 为什么 BPM 下一节点办理人总是空？ | `backend-pitfalls-02-bpm-assignee` | [x] 已发布 | false |
+| 3 | 审批单为什么要「主表+明细+JSON 快照」？ | `backend-pitfalls-03-snapshot-bpm` | [x] 已发布 | false |
+
+**发布时间**：2026-05-27（三篇同日上线审阅；首页按 `pubDatetime` 排序，第 1 期在最上）
 
 ## 脱敏自检（每篇发布前勾选）
 
@@ -20,9 +22,8 @@
 
 ## 发布备忘
 
-- [ ] 第 1 期：`draft: false`，`pubDatetime = D0`
+- [x] 三篇 `draft: false`（2026-05-27）
 - [ ] 约 7 天后：第 1 期 `featured: true`
-- [ ] 第 2/3 期：`D0+7` / `D0+14`
 - [ ] `theme/animal-island` merge 后：首页 hero 连载行
 - [ ] P1 ≥ 5 篇：系列 index + 移除 hero 行
 
