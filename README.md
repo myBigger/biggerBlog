@@ -1,4 +1,18 @@
-# AstroPaper 📄
+# 必哥的技术笔记（biggerBlog）
+
+个人技术博客，基于 [AstroPaper](https://github.com/satnaing/astro-paper) 定制。线上：<https://biggerblog.vercel.app/>
+
+- **协作与写作规范**：[CLAUDE.md](./CLAUDE.md)
+- **仓库结构速览**：[docs/repository-overview.md](./docs/repository-overview.md)
+
+```bash
+pnpm install && pnpm run dev   # http://localhost:4321
+pnpm run build                 # lint + 构建 + pagefind
+```
+
+---
+
+# AstroPaper 📄（上游模板说明）
 
 ![AstroPaper](public/astropaper-og.jpg)
 [![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/community/file/1356898632249991861)

@@ -4,10 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  strnum: file:/tmp/strnum-patch/strnum-2.1.1.tgz
-  stream-replace-string: file:/tmp/pnpm-patches/stream-replace-string-2.0.0/stream-replace-string-2.0.0.tgz
-
 importers:
 
   .:
@@ -2439,9 +2435,8 @@ packages:
   space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
 
-  stream-replace-string@file:../../../../../tmp/pnpm-patches/stream-replace-string-2.0.0/stream-replace-string-2.0.0.tgz:
-    resolution: {integrity: sha512-+9KBN7JQZ7eafiOg3P7ljgqAwKarUcQtlYYOT7ol6So3P4J4d0L2RpoEOvAqy2xl0GO64YyvS+Ta2pUwh2jX3g==, tarball: file:../../../../../tmp/pnpm-patches/stream-replace-string-2.0.0/stream-replace-string-2.0.0.tgz}
-    version: 2.0.0
+  stream-replace-string@2.0.0:
+    resolution: {integrity: sha512-TlnjJ1C0QrmxRNrON00JvaFFlNh5TTG00APw23j74ET7gkQpTASi6/L2fuiav8pzK715HXtUeClpBTw2NPSn6w==}
 
   string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
@@ -2469,9 +2464,8 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  strnum@file:../../../../../tmp/strnum-patch/strnum-2.1.1.tgz:
-    resolution: {integrity: sha512-bLZdNzG+v7Nor4+KWWKLebBAkjN9vV1IbcNVehF19+VP2OiaRw4FWQJARxl8Jjjq2XvCk4TYQvaU33wfIrycjw==, tarball: file:../../../../../tmp/strnum-patch/strnum-2.1.1.tgz}
-    version: 2.1.1
+  strnum@2.1.1:
+    resolution: {integrity: sha512-7ZvoFTiCnGxBtDqJ//Cu6fWtZtc7Y3x+QOirG15wztbdngGSkht27o2pyGWrVy0b4WAy3jbKmnoK6g5VlVNUUw==}
 
   suf-log@2.5.3:
     resolution: {integrity: sha512-KvC8OPjzdNOe+xQ4XWJV2whQA0aM1kGVczMQ8+dStAO6KfEB140JEVQ9dE76ONZ0/Ylf67ni4tILPJB41U0eow==}
@@ -3009,7 +3003,7 @@ snapshots:
   '@astrojs/sitemap@3.6.0':
     dependencies:
       sitemap: 8.0.0
-      stream-replace-string: file:../../../../../tmp/pnpm-patches/stream-replace-string-2.0.0/stream-replace-string-2.0.0.tgz
+      stream-replace-string: 2.0.0
       zod: 3.25.76
 
   '@astrojs/telemetry@3.3.0':
@@ -4359,7 +4353,7 @@ snapshots:
 
   fast-xml-parser@5.3.3:
     dependencies:
-      strnum: file:../../../../../tmp/strnum-patch/strnum-2.1.1.tgz
+      strnum: 2.1.1
 
   fastq@1.19.0:
     dependencies:
@@ -5466,7 +5460,7 @@ snapshots:
 
   space-separated-tokens@2.0.2: {}
 
-  stream-replace-string@file:../../../../../tmp/pnpm-patches/stream-replace-string-2.0.0/stream-replace-string-2.0.0.tgz: {}
+  stream-replace-string@2.0.0: {}
 
   string-width@4.2.3:
     dependencies:
@@ -5497,7 +5491,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  strnum@file:../../../../../tmp/strnum-patch/strnum-2.1.1.tgz: {}
+  strnum@2.1.1: {}
 
   suf-log@2.5.3:
     dependencies:

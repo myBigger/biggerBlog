@@ -48,7 +48,7 @@ if (typeof initOgImage === "string") {
 
 // Use dynamic OG image if enabled and no remote|local ogImage
 if (!ogImageUrl && SITE.dynamicOgImage) {
-  ogImageUrl = `${getPath(post.id, post.filePath)}/index.png`;
+  ogImageUrl = `${getPath(post.id, post.filePath, true, post.data.slug)}/index.png`;
 }
 
 // Resolve OG image URL (or fallback to SITE.ogImage / default `og.png`)
@@ -69,9 +69,10 @@ const layoutProps = {
 
 /* ========== Prev/Next Posts ========== */
 
-const allPosts = posts.map(({ data: { title }, id, filePath }) => ({
+const allPosts = posts.map(({ data: { title, slug }, id, filePath }) => ({
   id,
   title,
+  slug,
   filePath,
 }));
 
@@ -133,7 +134,7 @@ const nextPost =
       {
         prevPost && (
           <a
-            href={getPath(prevPost.id, prevPost.filePath)}
+            href={getPath(prevPost.id, prevPost.filePath, true, prevPost.slug)}
             class="ac-post-nav-card"
           >
             <IconChevronLeft class="inline-block flex-none rtl:rotate-180" />
@@ -147,7 +148,7 @@ const nextPost =
       {
         nextPost && (
           <a
-            href={getPath(nextPost.id, nextPost.filePath)}
+            href={getPath(nextPost.id, nextPost.filePath, true, nextPost.slug)}
             class="ac-post-nav-card justify-end text-end sm:col-start-2"
           >
             <div>

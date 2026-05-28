@@ -110,7 +110,7 @@ ci: 添加 Astro 构建缓存
 ### 文章命名
 
 文件名格式：`{category}-{short-description}.md`
-slug 在 frontmatter 的 `slug:` 字段里单独指定，不要用默认文件名
+`slug` 在 frontmatter 的 `slug:` 字段里单独指定，并作为文章 URL（`/posts/{slug}`）；未填时回退为文件名。文件名宜与 `slug` 一致，仅在需要稳定 URL 时允许二者不同。
 
 ---
 
@@ -151,6 +151,7 @@ description: 一句话描述（SEO 用，60-160 字） # 必须有
 
 当你接管 biggerBlog 仓库时：
 
+- [x] 阅读仓库概览：[`docs/repository-overview.md`](docs/repository-overview.md)
 - [x] 了解博客框架：AstroPaper（`astro.config.ts`）
 - [x] 了解内容规范：frontmatter schema（`.astro/collections/blog.schema.json`）
 - [x] 了解写作风格：必哥手记体（见本文档第二节）

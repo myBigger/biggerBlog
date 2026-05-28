@@ -31,12 +31,12 @@ const cardColor = featured
   ? "app-blue"
   : LIST_COLORS[colorIndex % LIST_COLORS.length];
 
-const { title, description, ...props } = data;
+const { title, description, slug, ...props } = data;
 ---
 
 <li class="my-4">
   <a
-    href={getPath(id, filePath)}
+    href={getPath(id, filePath, true, slug)}
     class:list={[
       "ac-card ac-shadow-3d block",
       `ac-card--${cardColor}`,

@@ -24,7 +24,8 @@
 
 - [x] 三篇 `draft: false`（2026-05-27）
 - [ ] 约 7 天后：第 1 期 `featured: true`
-- [ ] `theme/animal-island` merge 后：首页 hero 连载行
+- [x] `theme/animal-island` 已合入 `main`（与 main 同提交；动森主题见 `src/styles/animal-island.css`）
+- [ ] 首页 hero 连载行（可选优化）
 - [ ] P1 ≥ 5 篇：系列 index + 移除 hero 行
 
 ## P1+（待 P0 审过后启动）
